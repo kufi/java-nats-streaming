@@ -153,7 +153,7 @@ sc.subscribe("foo", new MessageHandler() {
     public void onMessage(Message m) {
         System.out.printf("Received a message: %s\n", m.getData());
     }
-}, new SubscriptionOptions.Builder().setDurableName("my-durable"));
+}, new SubscriptionOptions.Builder().setDurableName("my-durable").build());
 ...
 // client receives message sequence 1-40 
 ...
@@ -167,7 +167,7 @@ sc.subscribe("foo", new MessageHandler() {
     public void onMessage(Message m) {
         System.out.printf("Received a message: %s\n", m.getData());
     }
-}, new SubscriptionOptions.Builder().setDurableName("my-durable"));
+}, new SubscriptionOptions.Builder().setDurableName("my-durable").build());
 ...
 // client receives messages 41-current
 ```
